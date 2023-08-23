@@ -2,10 +2,10 @@
 
 ## Demo Requirements
 ### What you should have before you start
-A K8s cluster API endpoint
-A K8s cluster access token
-A set of client key/certificate data with the token above
-A Github repository to store and version your demo code
+1. A K8s cluster `API endpoint`
+2. A K8s cluster `access token`
+3. A set of `client key/certificate` data with the token above
+4. A `Github repository` to store and version your demo code
 
 ### What the API needs to do
 Write a simple API in Python using a framework of your choice that has the following endpoints:
