@@ -9,6 +9,8 @@ import json
 
 import os
 
+import sys
+
 from flask import Flask, request, jsonify
 
 ###########################################################
@@ -16,6 +18,7 @@ from flask import Flask, request, jsonify
 ###########################################################
 app = Flask(__name__)
 counter = 0
+args = sys.argv
 
 
 ###########################################################
@@ -67,6 +70,19 @@ def rest_get(file_id):
 
 
 ###########################################################
+#  API Version
+###########################################################
+@app.route("/version", methods=["GET"])
+def version():
+    try:
+        global args
+        return jsonify(version=args[1])
+    except Exception as e:
+        print(e)
+        return "Wrong Arguments"
+
+
+###########################################################
 #  Run API server
 ###########################################################
-app.run()
+app.run(host='0.0.0.0', port='5000')
