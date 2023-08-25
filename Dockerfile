@@ -4,6 +4,6 @@ RUN ["/bin/bash", "-c", "apt-get update -y && apt-get install python3 -y && apt-
 ADD demo.py /home/
 WORKDIR /home/
 EXPOSE 5000
-ENTRYPOINT ["/bin/bash", "-c", "python3", "demo.py"]
-
+SHELL ["/bin/bash", "-c"]
+ENTRYPOINT ["python3", "demo.py"]
 
