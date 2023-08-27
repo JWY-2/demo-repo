@@ -2,7 +2,7 @@
 # Project Name: Simple API endpoint
 # Purpose: Demo for interview
 # Author: Jiawei Yao
-# Date: August 28, 2023
+# Due Date: August 28, 2023
 ###########################################################
 
 import json
@@ -78,7 +78,7 @@ def version():
         return jsonify(version=args[1])
     except Exception as e:
         print(e)
-        return "Wrong Arguments"
+        return "Wrong Arguments!"
 
 
 ###########################################################
