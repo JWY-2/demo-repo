@@ -20,12 +20,14 @@ app = Flask(__name__)
 counter = 0
 args = sys.argv
 
+
 ###########################################################
 #  Welcome Page
 ###########################################################
 @app.route("/")
 def welcome():
-    return "Welcome to demo!"
+    global args
+    return f"Welcome to demo! (version: {args[1] if len(args) >= 2 else 'unknown'})"
 
 
 ###########################################################
