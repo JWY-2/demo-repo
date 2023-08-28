@@ -1,4 +1,4 @@
-docker build -t jwy626/demo .
+docker build -t jwy626/demo:latest .
 docker login
 docker push  jwy626/demo
 helm upgrade release-1 --install ./mychart --set apiversion=1.1
