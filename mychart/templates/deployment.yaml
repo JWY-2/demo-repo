@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-{{ .Release.Name }}
+  name: deploy-{{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-{{ .Release.Name }}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-{{ .Release.Name }}
+    spec:
+      containers:
+      - image: jwy626/demo:{{ .Values.tag}}
+        imagePullPolicy: Always
+        name: demo-{{ .Release.Name }}
+        args: [{{ .Values.apiversion | quote}}]
+        ports:
+        - containerPort: 5000
+        resources: {}
+status: {}
