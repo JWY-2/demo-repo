@@ -1,4 +1,4 @@
-# Demo for Interview Purpose (Explorance)
+# Demo
 
 ## Demo Requirements
 ### What you should have before you start
